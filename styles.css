@@ -1,0 +1,115 @@
+/* edgeHOST — brand: copper on charcoal, restrained, generous whitespace. */
+:root {
+  --ink: #1e2427;          /* charcoal ground (from the wordmark bg) */
+  --ink-2: #262d31;        /* raised panel */
+  --copper: #c17a4e;       /* the wordmark copper */
+  --copper-hi: #d69368;    /* lighter copper for accents */
+  --cream: #ece5dd;        /* primary text on dark */
+  --muted: #8b9498;        /* secondary text */
+  --line: #333b40;         /* hairlines */
+  --measure: 34rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(120% 80% at 50% -10%, #242b2f 0%, var(--ink) 60%) fixed;
+  color: var(--cream);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.shell {
+  width: 100%;
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 6vw, 3.5rem);
+}
+
+/* Hero */
+.hero { text-align: center; }
+.wordmark {
+  width: min(100%, 30rem);
+  height: auto;
+  filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.35));
+}
+.tagline {
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+.muted { color: var(--muted); font-weight: 500; }
+
+/* Lede */
+.lede {
+  max-width: var(--measure);
+  margin-inline: auto;
+  text-align: center;
+}
+.lede p { margin: 0; font-size: 1.075rem; color: #cdd4d7; }
+
+/* Targets */
+.targets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  justify-content: center;
+}
+.targets li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--ink-2);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cream);
+}
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--copper);
+  box-shadow: 0 0 0 3px rgba(193, 122, 78, 0.16);
+}
+
+/* Footer */
+.foot {
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(1.5rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.status {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper-hi);
+  font-weight: 600;
+}
+.spark { color: var(--copper); }
+.colophon { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .wordmark { transition: filter 0.4s ease; }
+}
