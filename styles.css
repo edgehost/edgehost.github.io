@@ -38,6 +38,13 @@ body {
 
 /* Hero */
 .hero { text-align: center; }
+.mark {
+  width: clamp(4.5rem, 14vw, 7rem);
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.4));
+}
 .wordmark {
   width: min(100%, 30rem);
   height: auto;
